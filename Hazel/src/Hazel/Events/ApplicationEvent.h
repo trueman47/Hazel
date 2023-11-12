@@ -1,5 +1,4 @@
 
-#include <sstream>
 #include "Event.h"
 
 namespace Hazel {
