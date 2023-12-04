@@ -161,7 +161,7 @@ namespace Hazel {
 			MouseMovedEvent event((float)xPos, (float)yPos);
 			data.EventCallback(event);
 		});
-		/*
+		
 		
 		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
 		{
@@ -170,7 +170,7 @@ namespace Hazel {
 			KeyTypedEvent event(keycode);
 			data.EventCallback(event);
 		});
-		 */
+		 
 	}
 
 	void WindowsWindow::Shutdown()

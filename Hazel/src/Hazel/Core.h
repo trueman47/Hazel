@@ -12,6 +12,8 @@
 
 #define BIT(x) (1 << x)
 
+#define HZ_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
 #ifdef HZ_ENABLE_ASSERTS
 
 // Alteratively we could use the same "default" message for both "WITH_MSG" and "NO_MSG" and
