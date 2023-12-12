@@ -21,6 +21,7 @@ include "Hazel/vendor/imgui"
 
 project "Hazel"
 	location "Hazel"
+	staticruntime "off"
 	kind "SharedLib"
 	language "C++"
 
@@ -55,7 +56,6 @@ project "Hazel"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -90,6 +90,7 @@ project "Hazel"
 
 project "Sandbox"
 	location "Sandbox"
+	staticruntime "off"
 	kind "ConsoleApp"
 	language "C++"
 
@@ -115,7 +116,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -125,12 +125,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
+		runtime "Release"
 		optimize "On"
