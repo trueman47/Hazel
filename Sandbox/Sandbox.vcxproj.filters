@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\SandBoxApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\Checkerboard.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\ChernoLogo.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="assets">
+      <UniqueIdentifier>{d4bffd51-fec7-4736-bc37-c72bde51d30c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\shaders">
+      <UniqueIdentifier>{b3323989-1f8e-42a8-a4c2-dfe232aa27c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{55b279da-d76a-4937-b66f-0891492af50e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Texture.glsl">
+      <Filter>assets\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
