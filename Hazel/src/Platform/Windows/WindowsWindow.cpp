@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "Platform/Windows/WindowsWindow.h"
 
-#include "Hazel/Core.h"
+#include "Hazel/Core/Core.h"
 
 #include "Hazel/Events/ApplicationEvent.h"
 #include "Hazel/Events/MouseEvent.h"
