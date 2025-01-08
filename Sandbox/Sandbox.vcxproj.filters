@@ -2,14 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="src\SandBoxApp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\textures\Checkerboard.png">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\ChernoLogo.png">
-      <Filter>assets\textures</Filter>
-    </Image>
+    <ClCompile Include="src\Sandbox2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="assets">
@@ -23,8 +16,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Texture.glsl">
-      <Filter>assets\shaders</Filter>
-    </None>
+    <Image Include="assets\textures\Checkerboard.png" />
+    <Image Include="assets\textures\ChernoLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\Texture.glsl" />
+    <None Include="assets\shaders\FlatColor.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Sandbox2D.h" />
   </ItemGroup>
 </Project>
