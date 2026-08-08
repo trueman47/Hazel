@@ -1,30 +1,24 @@
 #include "hzpch.h"
+#include "Hazel/ImGui/ImGuiLayer.h"
 
-#include "ImguiLayer.h"
-
-#include "backends/imgui_impl_glfw.h"
-#include "backends/imgui_impl_opengl3.h"
+#include <imgui.h>
+#include <backends/imgui_impl_glfw.h>
+#include <backends/imgui_impl_opengl3.h>
 
 #include "Hazel/Core/Application.h"
 
-//temp
+// TEMPORARY
 #include <GLFW/glfw3.h>
 #include <glad/glad.h>
 
 namespace Hazel {
 
-	ImguiLayer::ImguiLayer()
-		: Layer("ImguiLayer")
+	ImGuiLayer::ImGuiLayer()
+		: Layer("ImGuiLayer")
 	{
-
 	}
 
-	ImguiLayer::~ImguiLayer()
-	{
-
-	}
-
-	void ImguiLayer::Attach()
+	void ImGuiLayer::OnAttach()
 	{
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
@@ -55,24 +49,23 @@ namespace Hazel {
 		// Setup Platform/Renderer bindings
 		ImGui_ImplGlfw_InitForOpenGL(window, true);
 		ImGui_ImplOpenGL3_Init("#version 410");
-
 	}
 
-	void ImguiLayer::Detach()
+	void ImGuiLayer::OnDetach()
 	{
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
 
-	void ImguiLayer::Begin()
+	void ImGuiLayer::Begin()
 	{
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 	}
 
-	void ImguiLayer::End()
+	void ImGuiLayer::End()
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
@@ -89,6 +82,12 @@ namespace Hazel {
 			ImGui::RenderPlatformWindowsDefault();
 			glfwMakeContextCurrent(backup_current_context);
 		}
+	}
+
+	void ImGuiLayer::OnImGuiRender()
+	{
+		static bool show = true;
+		ImGui::ShowDemoWindow(&show);
 	}
 
 }

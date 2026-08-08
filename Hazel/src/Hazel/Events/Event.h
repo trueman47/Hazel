@@ -1,11 +1,14 @@
 #pragma once
+#include "hzpch.h"
 
 #include "Hazel/Core/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace Hazel {
+
+	// Events in Hazel are currently blocking, meaning when an event occurs it
+	// immediately gets dispatched and must be dealt with right then an there.
+	// For the future, a better strategy might be to buffer events in an event
+	// bus and process them during the "event" part of the update stage.
 
 	enum class EventType
 	{
@@ -32,10 +35,9 @@ namespace Hazel {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class Event {
+	class Event
+	{
 	public:
-		virtual ~Event() = default;
-
 		bool Handled = false;
 
 		virtual EventType GetEventType() const = 0;
@@ -43,27 +45,27 @@ namespace Hazel {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		bool IsInCategory(EventCategory category)
+		inline bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
 		}
 	};
 
-	class EventDispatcher {
+	class EventDispatcher
+	{
 	public:
 		EventDispatcher(Event& event)
 			: m_Event(event)
 		{
-
 		}
 
-		//F will be deduced by compiler
+		// F will be deduced by the compiler
 		template<typename T, typename F>
 		bool Dispatch(const F& func)
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled |= func(static_cast<T&>(m_Event));
+				m_Event.Handled = func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;
@@ -72,9 +74,9 @@ namespace Hazel {
 		Event& m_Event;
 	};
 
-
 	inline std::ostream& operator<<(std::ostream& os, const Event& e)
 	{
 		return os << e.ToString();
 	}
+
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "Hazel/Renderer/Buffer.h"
 
 namespace Hazel {

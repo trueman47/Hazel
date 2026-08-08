@@ -1,12 +1,13 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "Hazel/Renderer/OrthographicCamera.h"
 #include "Hazel/Core/Timestep.h"
 
 #include "Hazel/Events/ApplicationEvent.h"
 #include "Hazel/Events/MouseEvent.h"
 
 namespace Hazel {
+
 	class OrthographicCameraController
 	{
 	public:
@@ -29,8 +30,10 @@ namespace Hazel {
 		OrthographicCamera m_Camera;
 
 		bool m_Rotation;
+
 		glm::vec3 m_CameraPosition = { 0.0f, 0.0f, 0.0f };
-		float m_CameraRotation = 0.0f;
+		float m_CameraRotation = 0.0f; //In degrees, in the anti-clockwise direction
 		float m_CameraTranslationSpeed = 5.0f, m_CameraRotationSpeed = 180.0f;
 	};
+
 }

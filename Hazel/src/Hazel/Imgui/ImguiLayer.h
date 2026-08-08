@@ -7,20 +7,21 @@
 #include "Hazel/Events/MouseEvent.h"
 
 namespace Hazel {
-	class HAZEL_API ImguiLayer : public Layer
+
+	class ImGuiLayer : public Layer
 	{
 	public:
-		ImguiLayer();
-		~ImguiLayer();
+		ImGuiLayer();
+		~ImGuiLayer() = default;
 
-		virtual void Attach() override;
-		virtual void Detach() override;
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
 
 		void Begin();
 		void End();
-
-
 	private:
 		float m_Time = 0.0f;
 	};
+
 }

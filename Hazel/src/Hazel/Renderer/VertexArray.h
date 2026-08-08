@@ -21,4 +21,5 @@ namespace Hazel {
 
 		static Ref<VertexArray> Create();
 	};
+
 }

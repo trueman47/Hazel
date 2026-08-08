@@ -1,7 +1,6 @@
 #pragma once
 
 // From glfw3.h
-/* Printable keys */
 #define HZ_KEY_SPACE              32
 #define HZ_KEY_APOSTROPHE         39  /* ' */
 #define HZ_KEY_COMMA              44  /* , */
