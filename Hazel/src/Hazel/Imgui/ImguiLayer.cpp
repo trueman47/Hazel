@@ -91,9 +91,4 @@ namespace Hazel {
 		}
 	}
 
-	void ImguiLayer::OnImGuiRender()
-	{
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
-	}
 }
