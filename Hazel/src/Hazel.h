@@ -6,6 +6,10 @@
 
 #include "Hazel/Core/Log.h"
 #include "Hazel/Imgui/ImguiLayer.h"
+
+#include "Hazel/Scene/Scene.h"
+#include "Hazel/Scene/Components.h"
+
 #include "Hazel/Core/Layer.h"
 
 #include "Hazel/Core/Timestep.h"

@@ -17,6 +17,7 @@ IncludeDir['Glad'] ="Hazel/vendor/Glad/include"
 IncludeDir['Imgui'] ="Hazel/vendor/imgui"
 IncludeDir['glm'] ="Hazel/vendor/glm"
 IncludeDir["stb_image"] = "Hazel/vendor/stb_image"
+IncludeDir["entt"] = "Hazel/vendor/entt/include"
 
 include "Hazel/vendor/glfw"
 include "Hazel/vendor/Glad"
@@ -58,7 +59,8 @@ project "Hazel"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.Imgui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 	
 	links
@@ -70,7 +72,7 @@ project "Hazel"
 	}
 
 	filter "system:windows"
-		systemversion "10.0.17763.0"
+		systemversion "latest"
 		
 		defines
 		{
@@ -115,7 +117,8 @@ project "Sandbox"
 		"Hazel/vendor/spdlog/include",
 		"Hazel/src",
 		"Hazel/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -124,7 +127,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		systemversion "10.0.17763.0"
+		systemversion "latest"
 		
 		defines
 		{
@@ -167,7 +170,8 @@ project "Hazel-Editor"
 		"Hazel/vendor/spdlog/include",
 		"Hazel/src",
 		"Hazel/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
