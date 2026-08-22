@@ -26,14 +26,18 @@ namespace Hazel {
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
-		inline Window& GetWindow() { return *m_Window; }
+		Window& GetWindow() { return *m_Window; }
+
 		void Close();
-		inline static Application& Get() { return *s_Instance; }
+
+		ImGuiLayer* GetImGuiLayer() { return m_ImGuiLayer; }
+
+		static Application& Get() { return *s_Instance; }
 	private:
+		void Run();
 		bool OnWindowClose(WindowCloseEvent& e);
 		bool OnWindowResize(WindowResizeEvent& e);
 	private:
-		void Run();
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;

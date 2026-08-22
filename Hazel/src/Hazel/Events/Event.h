@@ -39,6 +39,7 @@ namespace Hazel {
 	{
 	public:
 		virtual ~Event() = default;
+
 		bool Handled = false;
 
 		virtual EventType GetEventType() const = 0;
@@ -46,7 +47,7 @@ namespace Hazel {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category)
+		bool IsInCategory(EventCategory category)
 		{
 			return GetCategoryFlags() & category;
 		}

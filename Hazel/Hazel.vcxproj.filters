@@ -153,9 +153,6 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
-      <Filter>src\Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -1497,7 +1494,6 @@
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
     <ClCompile Include="src\Hazel\Renderer\GraphicsContext.cpp" />
-    <ClCompile Include="src\Hazel\Core\Input.cpp" />
     <ClCompile Include="src\Hazel\Core\Window.cpp" />
     <ClCompile Include="src\Hazel\Renderer\Renderer2D.cpp">
       <Filter>src\Hazel\Renderer</Filter>
