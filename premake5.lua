@@ -18,10 +18,12 @@ IncludeDir['Imgui'] ="Hazel/vendor/imgui"
 IncludeDir['glm'] ="Hazel/vendor/glm"
 IncludeDir["stb_image"] = "Hazel/vendor/stb_image"
 IncludeDir["entt"] = "Hazel/vendor/entt/include"
+IncludeDir["yaml_cpp"] = "%{wks.location}/Hazel/vendor/yaml-cpp/include"
 
 include "Hazel/vendor/glfw"
 include "Hazel/vendor/Glad"
 include "Hazel/vendor/imgui"
+include "Hazel/vendor/yaml-cpp"
 
 project "Hazel"
 	location "Hazel"
@@ -60,7 +62,8 @@ project "Hazel"
 		"%{IncludeDir.Imgui}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 	}
 	
 	links
@@ -68,6 +71,7 @@ project "Hazel"
 		"GLFW",
 		"Glad",
 		"Imgui",
+		"yaml-cpp",
 		"opengl32.lib"
 	}
 
@@ -78,7 +82,8 @@ project "Hazel"
 		{
 			"HZ_PLATFORM_WINDOWS",
 			"HZ_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			"YAML_CPP_STATIC_DEFINE"
 		}
 
 	filter "configurations:Debug"
@@ -171,12 +176,14 @@ project "Hazel-Editor"
 		"Hazel/src",
 		"Hazel/vendor",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml_cpp}"
 	}
 
 	links
 	{
-		"Hazel"
+		"Hazel",
+		"yaml-cpp"
 	}
 
 	filter "system:windows"
