@@ -18,6 +18,12 @@ namespace Hazel {
 		virtual void OnImGuiRender() override;
 		void OnEvent(Event& e) override;
 	private:
+		bool OnKeyPressed(KeyPressedEvent& e);
+
+		void NewScene();
+		void OpenScene();
+		void SaveSceneAs();
+	private:
 		Hazel::OrthographicCameraController m_CameraController;
 
 		// Temp
@@ -39,6 +45,7 @@ namespace Hazel {
 
 		glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
+		// Panels
 		SceneHierarchyPanel m_SceneHierarchyPanel;
 	};
 
