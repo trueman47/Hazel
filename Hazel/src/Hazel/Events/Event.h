@@ -1,5 +1,7 @@
 #pragma once
-#include "hzpch.h"
+#include <functional>
+
+#include "Hazel/Debug/Instrumentor.h"
 
 #include "Hazel/Core/Base.h"
 
@@ -67,7 +69,7 @@ namespace Hazel {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.Handled = func(static_cast<T&>(m_Event));
+				m_Event.Handled |= func(static_cast<T&>(m_Event));
 				return true;
 			}
 			return false;

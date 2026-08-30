@@ -5,6 +5,7 @@
 #include "Hazel/Core/Application.h"
 
 #include "Hazel/Core/Log.h"
+#include "Hazel/Core/Assert.h"
 #include "Hazel/Imgui/ImguiLayer.h"
 
 #include "Hazel/Scene/Scene.h"
